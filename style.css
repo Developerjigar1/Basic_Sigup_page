@@ -1,0 +1,114 @@
+/* --- Global Reset and Layout --- */
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.main-container {
+    display: flex;
+    width: 800px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* --- Toggle/Lamp Side Styling --- */
+.toggle-side {
+    background-color: #333; /* Dark background for the lamp side */
+    color: white;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+#toggle-btn {
+    background: none;
+    border: none;
+    font-size: 80px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.lamp-off {
+    color: #444; /* Dim color when off (Login mode) */
+}
+
+.lamp-on {
+    color: yellow; /* Bright color when on (Signup mode) */
+    text-shadow: 0 0 10px yellow;
+    animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+    from { opacity: 0.8; }
+    to { opacity: 1; }
+}
+
+/* --- Forms Side Styling and Switching --- */
+.form-side {
+    width: 70%;
+    padding: 40px;
+    background-color: white;
+    position: relative;
+}
+
+.interface {
+    transition: opacity 0.5s ease;
+}
+
+/* 1. Crucial CSS for switching forms (Interface Hiding) */
+.hidden {
+    display: none; /* Jo form chhipa hua hai woh space nahi lega */
+    opacity: 0;
+}
+
+.active {
+    display: block; /* Jo form active hai woh dikhega */
+    opacity: 1;
+}
+
+/* 2. Crucial CSS for hiding the Signup Button by default */
+.hidden-button {
+    display: none !important; /* Yeh class button ko chhupane ke liye hai */
+}
+
+/* --- Common Form Styling --- */
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
